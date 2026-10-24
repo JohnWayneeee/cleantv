@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Clean TV</string>
+    <string name="inputs">Входы</string>
+    <string name="wifi">Wi-Fi</string>
+    <string name="ethernet">Ethernet</string>
+    <string name="offline">Нет сети</string>
+    <string name="live_tv">Эфирное ТВ</string>
+    <string name="av">AV</string>
+    <string name="all_apps">Все приложения</string>
+    <string name="good_morning">Доброе утро</string>
+    <string name="good_day">Добрый день</string>
+    <string name="good_evening">Добрый вечер</string>
+    <string name="good_night">Доброй ночи</string>
+</resources>

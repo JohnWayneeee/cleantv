@@ -1,0 +1,18 @@
+# Per-TV work directories: backups and screenshots hold device identifiers
+tvs/
+
+# Build output
+build/
+.gradle/
+local.properties
+*.apk
+
+# Local Claude Code wiring
+.claude/
+
+__pycache__/
+*.pyc
+.DS_Store
+
+# Original banner with C2PA metadata; the clean copy is assets/banner.png
+/Android TV Setup & Optimize.png

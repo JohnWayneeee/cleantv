@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:clipChildren="false">
+
+    <ImageView
+        android:id="@+id/wallpaper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:importantForAccessibility="no"
+        android:scaleType="centerCrop"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:descendantFocusability="blocksDescendants"
+        android:focusable="false"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/page"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/hero"
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
+                android:clipChildren="false">
+
+                <View
+                    android:id="@+id/glow"
+                    android:layout_width="900dp"
+                    android:layout_height="420dp"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginStart="-260dp"
+                    android:layout_marginBottom="-190dp"
+                    android:alpha="0" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="64dp"
+                    android:layout_marginTop="44dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/greeting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#99FFFFFF"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/clock"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-4dp"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.02"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="92sp" />
+
+                    <TextView
+                        android:id="@+id/date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#B3FFFFFF"
+                        android:textSize="21sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/pills"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|end"
+                    android:layout_marginTop="52dp"
+                    android:layout_marginEnd="64dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/pillInputs"
+                        style="@style/Pill"
+                        android:drawableStart="@drawable/ic_input"
+                        android:text="@string/inputs" />
+
+                    <TextView
+                        android:id="@+id/pillWifi"
+                        style="@style/Pill"
+                        android:layout_marginStart="14dp"
+                        android:drawableStart="@drawable/ic_wifi"
+                        android:text="@string/wifi" />
+
+                    <TextView
+                        android:id="@+id/pillSettings"
+                        style="@style/Pill"
+                        android:layout_marginStart="14dp"
+                        android:drawableStart="@drawable/ic_settings"
+                        android:drawablePadding="0dp"
+                        android:paddingEnd="13dp"
+                        android:paddingStart="13dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/dockTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginStart="64dp"
+                    android:layout_marginBottom="22dp"
+                    android:alpha="0"
+                    android:singleLine="true"
+                    android:textColor="#F2FFFFFF"
+                    android:textSize="50sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/dockBand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:clipChildren="false"
+                android:paddingTop="22dp"
+                android:paddingBottom="10dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/dock"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:focusable="false"
+                    android:overScrollMode="never" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/gridTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="64dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/all_apps"
+                android:textColor="#80FFFFFF"
+                android:textSize="20sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:focusable="false"
+                android:overScrollMode="never" />
+
+            <Space
+                android:id="@+id/bottomSpace"
+                android:layout_width="match_parent"
+                android:layout_height="600dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/inputsMenu"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:visibility="gone" />
+
+    <com.cleantv.launcher.GlassHighlight
+        android:id="@+id/highlight"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0" />
+</FrameLayout>

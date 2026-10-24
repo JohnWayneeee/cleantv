@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tiles per row, for the dock and the grid below it. -->
+    <integer name="columns">4</integer>
+
+    <!-- Dock apps, left to right, by package name. Missing packages are skipped.
+         The skill replaces this list with the user's answer. -->
+    <string-array name="dock_apps">
+        <item>com.google.android.youtube.tv</item>
+        <item>com.netflix.ninja</item>
+        <item>com.android.vending</item>
+        <item>com.google.android.videos</item>
+    </string-array>
+
+    <!-- App that plays the tuner (Live TV entry of the Inputs menu). Find it with:
+         cmd package query-activities -a android.intent.action.VIEW -t vnd.android.cursor.dir/channel
+         MediaTek: com.mediatek.wwtv.tvcenter, AOSP: com.android.tv, Google: com.google.android.tv -->
+    <string name="live_tv_package">com.mediatek.wwtv.tvcenter</string>
+
+    <!-- Apps that need a DPI bypass. Before one of them opens, the launcher starts ByeByeDPI
+         (io.github.romanvht.byedpi); when Home comes back, it stops it. Empty list = off.
+         Set ByeByeDPI's app filter to a whitelist of the same apps so other traffic skips it. -->
+    <string-array name="dpi_apps" />
+    <string name="dpi_toggle">io.github.romanvht.byedpi/.activities.ToggleActivity</string>
+    <!-- Time for the bypass VPN to come up before the app opens. -->
+    <integer name="dpi_delay_ms">700</integer>
+
+    <!-- Packages never shown in the grid. -->
+    <string-array name="hidden_apps">
+        <item>com.android.tv.settings</item>
+    </string-array>
+
+    <!-- Optional wallpaper: push a JPG/PNG to
+         /sdcard/Android/data/com.cleantv.launcher/files/wallpaper.jpg
+         Without it the background stays pitch black. -->
+    <string name="wallpaper_file">wallpaper.jpg</string>
+    <!-- 0..255, darkens the wallpaper so text stays readable. -->
+    <integer name="wallpaper_dim">110</integer>
+
+    <!-- Variable font in assets/, and the weights used for each text style. -->
+    <string name="font_file">fonts/Onest.ttf</string>
+    <integer name="clock_weight">200</integer>
+    <integer name="title_weight">300</integer>
+    <integer name="body_weight">400</integer>
+</resources>
