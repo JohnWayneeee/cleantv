@@ -117,11 +117,9 @@ python ../../skills/android-tv-setup/scripts/restore.py
   ⭐ <b>CleanTV sped up your TV? Star the repo.</b>
 </p>
 
-<!-- Buy Me a Coffee: uncomment and put in your link
 <p align="center">
-  <a href="https://www.buymeacoffee.com/YOUR_BMC_NAME"><img src="https://img.shields.io/badge/Buy%20me%20a%20coffee-FFDD00?logo=buymeacoffee&logoColor=black" alt="Buy me a coffee"></a>
+  <a href="https://www.buymeacoffee.com/JohnWayne"><img src="https://img.shields.io/badge/Buy%20me%20a%20coffee-FFDD00?logo=buymeacoffee&logoColor=black" alt="Buy me a coffee"></a>
 </p>
--->
 
 ## License
 
