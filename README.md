@@ -119,6 +119,8 @@ python ../../skills/android-tv-setup/scripts/restore.py
 
 <p align="center">
   <a href="https://www.buymeacoffee.com/JohnWayne"><img src="https://img.shields.io/badge/Buy%20me%20a%20coffee-FFDD00?logo=buymeacoffee&logoColor=black" alt="Buy me a coffee"></a>
+  <br><br>
+  <img src="assets/bmc-qr.png" alt="Scan to buy me a coffee" width="160">
 </p>
 
 ## License
