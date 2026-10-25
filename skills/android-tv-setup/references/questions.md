@@ -53,6 +53,9 @@ Ask after measuring (`backup/meminfo.txt`, `top`). Show the numbers.
 **Q-P4. Compile apps now** (`bg-dexopt-job`, 5-15 minutes, TV must stay on). Recommended once after debloat.
 - RU: Оптимизировать все приложения сейчас? Займёт 5-15 минут, ТВ не выключать.
 
+**Q-P5. Background process limit** (only with 2 GB RAM or less and playback stops or reloads). The owner sets "At most 3/4 processes" in Developer Options; a reboot resets it. Not with ByeByeDPI or background music.
+- RU: Ограничить фоновые процессы до 3–4? Видео будет стабильнее, но свёрнутые приложения будут открываться заново. Сбрасывается после перезагрузки.
+
 ## Launcher (Q-L)
 
 **Q-L1. Dock size**: 4 (recommended) / 5 / 6 / 7.

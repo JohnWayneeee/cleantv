@@ -15,7 +15,7 @@ Typical findings: a setup wizard or pairing screen left in memory (200+ MB on Me
 the assistant (~100 MB) on a TV whose remote has no microphone, vendor background services with Firebase push,
 streaming apps kept alive in the background. Idle CPU should be > 80%: if not, find the process in `top`.
 
-## 2. Options (ask Q-P1..Q-P4)
+## 2. Options (ask Q-P1..Q-P5)
 
 All go through `setting.py` / `appops.py` / `disable.py`, so `restore.py` undoes them.
 
@@ -29,6 +29,18 @@ All go through `setting.py` / `appops.py` / `disable.py`, so `restore.py` undoes
 | More debloat | `disable.py debloat/batchN-speed.txt` | from the meminfo list, owner's choice |
 | Compile apps ahead of time | `tv.py 'cmd package bg-dexopt-job'` | 5-15 min, TV on; faster cold starts |
 | Trim caches | `tv.py 'pm trim-caches 999G'` | frees storage, apps rebuild caches |
+
+### Low-RAM devices (2 GB or less)
+
+If MemAvailable stays low after debloat and the owner sees playback stop or the player reload its buffer:
+
+- **Background process limit** (Q-P5). The owner sets it on the TV: Developer Options → Background process
+  limit → "At most 3 processes" or "At most 4 processes". It is not a `settings` key, so `restore.py` does not
+  track it; a reboot resets it to "Standard limit". Side effect: apps the owner switches away from start cold,
+  and a VPN/DPI-bypass app or music with the screen off may be killed. Skip it if they use ByeByeDPI.
+- **Player app.** A web-wrapper streaming app uses more memory than a native player. Compare on this TV:
+  `dumpsys meminfo <pkg>` while the video plays, and suggest the lighter one (e.g. SmartTube for YouTube,
+  VLC or Nova Video Player for local files and streams).
 
 Do not restrict background work for: the launcher, the TV app, input services, the keyboard, Play Services,
 VPN/DPI-bypass apps (they must stay running), music apps the owner listens to with the screen off.
