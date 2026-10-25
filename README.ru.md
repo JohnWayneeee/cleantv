@@ -79,6 +79,8 @@
 CleanTV отключает стоковый лаунчер и мастер настройки в правильном порядке и сохраняет Wi-Fi
 ([`references/launcher.md`](skills/android-tv-setup/references/launcher.md)).
 
+Хотите сделать всё вручную? Все команды с откатом для каждого шага (на английском): [How to Remove Ads from Google TV (and Make It Faster)](https://medium.com/@ghost.waynee/how-to-remove-ads-from-google-tv-and-make-it-faster-a-free-adb-guide-02dba456c6ce).
+
 ## Запуск за 3 шага
 
 **1. Установите скилл.** Проще всего: скопируйте промт ниже и отправьте его в Claude Code. Агент всё поставит сам.

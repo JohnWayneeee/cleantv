@@ -79,6 +79,8 @@ On Google TV a third-party launcher cannot win the Home button while the stock l
 caps its priority. CleanTV disables the stock launcher and the setup wizard in the right order and keeps Wi-Fi alive
 ([`references/launcher.md`](skills/android-tv-setup/references/launcher.md)).
 
+Prefer to do it by hand? The full command list with an undo for every step: [How to Remove Ads from Google TV (and Make It Faster)](https://medium.com/@ghost.waynee/how-to-remove-ads-from-google-tv-and-make-it-faster-a-free-adb-guide-02dba456c6ce).
+
 ## Three steps
 
 **1. Install the skill.** The easiest way: copy this prompt and send it to Claude Code. The agent installs everything.
