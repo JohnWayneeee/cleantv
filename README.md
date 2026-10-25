@@ -19,15 +19,25 @@
 </p>
 
 <p align="center">
-  ⭐ <b>Found it useful? Star the repo.</b> It helps other owners of sluggish TVs find it.
+  <b>For you if</b> you own an Android TV or Google TV set or box and its home screen sells you films instead of opening your apps.<br>
+  Xiaomi, TCL, Hisense, Sony, Philips, CHiQ/Changhong, Haier, Harper, Nvidia Shield and others. Not for Samsung Tizen, LG webOS or Fire TV.
+</p>
+
+<p align="center">
+  <a href="#three-steps"><b>→ Set it up in three steps</b></a>
 </p>
 
 ---
 
 ## Before → after
 
-Out of the box your TV shows ads instead of a home screen, runs a dozen background services and smooths and
-sharpens films. On our CHiQ the stock equaliser added +41 at 5 kHz. All of that shares 1–3 GB of RAM with your apps.
+You turn the TV on to watch one thing. First comes a row of ads and "recommended for you". The menu lags a second
+behind the remote. Apps open slowly. The fixes you find online are forum threads with a list of
+`adb` commands and no way back if one of them kills Wi-Fi.
+
+The cause is the same on most sets. Out of the box the TV runs a dozen vendor services, telemetry and ad rows in
+the background, and smooths and sharpens films. On our CHiQ the stock equaliser added +41 at 5 kHz. All of that
+shares 1–3 GB of RAM with your apps.
 
 Measured on two TVs:
 
@@ -49,8 +59,9 @@ Measured on two TVs:
 - **YouTube without throttling.** Installs [ByeByeDPI](https://github.com/romanvht/ByeByeDPI) on the TV itself, no external servers. Only YouTube goes through it. The launcher starts it when YouTube opens and stops it on the home screen.
 - **Checks on the TV.** The skill confirms each step with a screenshot from the TV or a command. At the end it closes network debugging and proves the port is shut.
 
-Works on Android TV and Google TV: Xiaomi, TCL, Hisense, Sony, Philips, CHiQ/Changhong, Haier, Harper, Nvidia Shield and others.
-Not for Samsung Tizen, LG webOS or Fire TV.
+**What you do:** turn on debugging, say one sentence, answer 10–15 questions about how you use the TV.
+**What Claude does:** finds the TV, picks the packages, runs every `adb` command, checks the result on screen
+and keeps a log, so one command undoes it all.
 
 ## Ways to remove ads from Google TV
 
@@ -145,9 +156,14 @@ No. Fire OS refuses `pm disable-user`, and Tizen and webOS are not Android.
 
 ---
 
-<p align="center">
-  ⭐ <b>CleanTV sped up your TV? Star the repo.</b>
-</p>
+## Support the project
+
+CleanTV is free and MIT licensed. Every board breaks in its own way, so each feature is tested on real TVs before
+it ships. Two ways to help:
+
+- ⭐ **Star the repo.** It takes a second and helps other owners of sluggish TVs find it.
+- ☕ **Buy me a coffee.** If CleanTV saved you an evening of `adb` commands, a coffee pays for the next module:
+  remote buttons, app keys and Bluetooth remotes.
 
 <p align="center">
   <a href="https://www.buymeacoffee.com/JohnWayne"><img src="https://img.shields.io/badge/Buy%20me%20a%20coffee-FFDD00?logo=buymeacoffee&logoColor=black" alt="Buy me a coffee"></a>
