@@ -24,7 +24,7 @@
 </p>
 
 <p align="center">
-  <a href="#three-steps"><b>→ Set it up in three steps</b></a>
+  <a href="#three-steps"><img src="https://img.shields.io/badge/Set_it_up_in_3_steps-→-3DDC84?style=for-the-badge" alt="Set it up in 3 steps"></a>
 </p>
 
 ---
@@ -59,19 +59,21 @@ Measured on two TVs:
 - **YouTube without throttling.** Installs [ByeByeDPI](https://github.com/romanvht/ByeByeDPI) on the TV itself, no external servers. Only YouTube goes through it. The launcher starts it when YouTube opens and stops it on the home screen.
 - **Checks on the TV.** The skill confirms each step with a screenshot from the TV or a command. At the end it closes network debugging and proves the port is shut.
 
-**What you do:** turn on debugging, say one sentence, answer 10–15 questions about how you use the TV.
-**What Claude does:** finds the TV, picks the packages, runs every `adb` command, checks the result on screen
-and keeps a log, so one command undoes it all.
+| You | Claude |
+|---|---|
+| Turn on debugging on the TV | Finds the TV on your network |
+| Say "Set up my TV" | Picks the packages and runs every `adb` command |
+| Answer 10–15 questions about how you use the TV | Checks each step on screen and logs it, so one command undoes it all |
 
 ## Ways to remove ads from Google TV
 
-| | Apps-only mode | Launcher app alone | Ad-blocking DNS | CleanTV |
-|---|---|---|---|---|
-| Ads and recommendations on the home screen | fewer, the stock screen stays | gone while the launcher holds Home | some ad requests blocked | **gone, the stock launcher is disabled** |
-| Vendor telemetry and background services | keep running | keep running | keep running | **disabled, memory measured before and after** |
-| Picture and sound calibration | no | no | no | **yes** |
-| YouTube ads | stay | stay | stay | stay |
-| Undo | a toggle | uninstall | one setting | **one command** |
+| | Apps-only mode | Launcher app | Ad-blocking DNS | **CleanTV** |
+|---|:-:|:-:|:-:|:-:|
+| No ads on the home screen | ➖ fewer | ✅ | ➖ some | ✅ |
+| Vendor services off, memory freed | ❌ | ❌ | ❌ | ✅ |
+| Picture and sound calibrated | ❌ | ❌ | ❌ | ✅ |
+| No YouTube ads | ❌ | ❌ | ❌ | ❌ |
+| Undo | toggle | uninstall | setting | one command |
 
 On Google TV a third-party launcher cannot win the Home button while the stock launcher is enabled: the system
 caps its priority. CleanTV disables the stock launcher and the setup wizard in the right order and keeps Wi-Fi alive
