@@ -7,8 +7,8 @@
 <p align="center"><b>English</b> · <a href="README.ru.md">Русский</a></p>
 
 <p align="center">
-  <b>Make your Android TV fast again with one sentence in Claude Code.</b><br>
-  The skill debloats the TV, calibrates picture and sound, and swaps the ad-filled home screen for your own apps.
+  <b>Remove ads from your Google TV home screen and make the TV fast again with one sentence in Claude Code.</b><br>
+  The skill debloats the TV over ADB without root, calibrates picture and sound, and swaps the ad-filled home screen for a clean Android TV launcher with your own apps.
 </p>
 
 <p align="center">
@@ -51,6 +51,20 @@ Measured on two TVs:
 
 Works on Android TV and Google TV: Xiaomi, TCL, Hisense, Sony, Philips, CHiQ/Changhong, Haier, Harper, Nvidia Shield and others.
 Not for Samsung Tizen, LG webOS or Fire TV.
+
+## Ways to remove ads from Google TV
+
+| | Apps-only mode | Launcher app alone | Ad-blocking DNS | CleanTV |
+|---|---|---|---|---|
+| Ads and recommendations on the home screen | fewer, the stock screen stays | gone while the launcher holds Home | some ad requests blocked | **gone, the stock launcher is disabled** |
+| Vendor telemetry and background services | keep running | keep running | keep running | **disabled, memory measured before and after** |
+| Picture and sound calibration | no | no | no | **yes** |
+| YouTube ads | stay | stay | stay | stay |
+| Undo | a toggle | uninstall | one setting | **one command** |
+
+On Google TV a third-party launcher cannot win the Home button while the stock launcher is enabled: the system
+caps its priority. CleanTV disables the stock launcher and the setup wizard in the right order and keeps Wi-Fi alive
+([`references/launcher.md`](skills/android-tv-setup/references/launcher.md)).
 
 ## Three steps
 
@@ -105,6 +119,24 @@ The TV and the computer must be on the same network. If the computer runs a VPN,
 cd tvs/<model>
 python ../../skills/android-tv-setup/scripts/restore.py
 ```
+
+## FAQ
+
+**Can I remove ads from Google TV without root?**
+Yes. CleanTV works over ADB debugging, which you turn on in Developer options. No root, no unlocked bootloader.
+
+**Will it break my TV?**
+Packages are disabled, not uninstalled. The skill refuses Android core, factory and Wi-Fi owner packages, backs up
+first and checks each step with a screenshot. `restore.py` brings everything back.
+
+**Does it block YouTube ads?**
+No. It removes ads from the home screen and vendor services. YouTube ads are served by YouTube itself.
+
+**Which Android version does the launcher need?**
+Android 8.0 or newer. On older TVs the skill does the debloat and leaves the stock launcher.
+
+**Does it work on Fire TV, Samsung or LG?**
+No. Fire OS refuses `pm disable-user`, and Tizen and webOS are not Android.
 
 ## Next
 
