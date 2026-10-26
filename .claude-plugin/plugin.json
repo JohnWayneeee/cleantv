@@ -1,7 +1,7 @@
 {
   "name": "android-tv-setup",
   "version": "0.2.1",
-  "description": "Debloat, speed up, calibrate picture and sound, and replace the launcher on Android TV / Google TV over ADB, verified with screenshots.",
+  "description": "Debloat, switch off screen tracking (ACR) and vendor mic/camera access, speed up, calibrate picture and sound, and replace the launcher on Android TV / Google TV over ADB, verified with screenshots.",
   "author": { "name": "JohnWayneeee" },
   "homepage": "https://github.com/JohnWayneeee/cleantv",
   "repository": "https://github.com/JohnWayneeee/cleantv",

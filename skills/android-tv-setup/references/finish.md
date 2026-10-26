@@ -19,6 +19,8 @@ Write it for the owner, short:
 
 - Device: brand, model, board, Android, RAM, IP.
 - What was disabled, per batch, with one line per package (from `debloat/*.txt`), and what was kept on purpose.
+- Privacy: ACR/ad packages disabled, menu toggles switched off (screenshots), apps that lost or kept the mic and
+  camera, Private DNS on or off, and anything the owner declined.
 - Performance, picture and sound changes with old -> new values (from `backup/*-changes.tsv`).
 - Known limits: dead remote buttons and the workaround, anything the owner declined.
 - How to re-enable one app: `adb shell pm enable <pkg>`.

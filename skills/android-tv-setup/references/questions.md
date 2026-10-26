@@ -37,6 +37,20 @@ Voice search / Assistant (`katniss`, `tv.assistant`) - Chromecast built-in (`med
 **Q-D4. Unknown user-installed packages** (one question per unclear package; options "mine, keep" / "don't know, keep and note it").
 - RU: На ТВ есть приложение <pkg> без иконки. Что это?
 
+## Privacy (Q-R)
+
+Mandatory phase (`privacy.md`). Show the `privacy.py scan` output in plain words first.
+
+**Q-R1. Screen recognition and ads** (remind, then confirm with a screenshot of each screen): switch off Samba Interactive TV / viewing information / content recognition, Usage & Diagnostics, and delete the advertising ID. Recommend all of them; recommendations inside apps keep working.
+- EN: The TV recognises what is on screen, HDMI included, and sends it for ads. Let's switch it off: open <path> and turn off <toggle>. I'll check it on the screenshot.
+- RU: Телевизор распознаёт, что на экране, даже с HDMI, и отправляет это рекламщикам. Выключим: откройте <путь> и выключите <пункт>. Я проверю по скриншоту.
+
+**Q-R2. Microphone** (checklist of apps holding it): keep for the voice assistant you use (recommended if you press the mic button) / keep for a call or karaoke app / block for everything.
+- RU: Микрофон сейчас доступен этим приложениям: <список>. Кому оставить? Остальным запрещу.
+
+**Q-R3. Camera** (only when the TV has one or an app holds the permission): block for all (recommended) / keep for a call app.
+- RU: У ТВ есть камера или доступ к ней. Запретить всем (рекомендую) или оставить для видеозвонков? Шторку камеры лучше закрыть.
+
 ## Performance (Q-P)
 
 Ask after measuring (`backup/meminfo.txt`, `top`). Show the numbers.
