@@ -48,10 +48,30 @@ Measured on two TVs:
 | Home screen | ads and recommendations | **your apps on pitch black** |
 | Picture | factory preset and "enhancers" | **calibrated for your room** |
 | YouTube where the ISP throttles it | stalls | **plays, bypass for YouTube only** |
+| What you watch | recognised on screen, sold for ads | **recognition off, mic and camera locked** |
+
+### Your TV is watching you back
+
+Most smart TVs run ACR, automatic content recognition. The TV samples what is on screen several times a second,
+films from an HDMI box or a console included, matches it against a database and sends the result for ad targeting.
+A 2024 UC Davis / UCL study measured Samsung sampling every 500 ms and LG every 10 ms. On Android TV and Google TV
+it is usually Samba TV (Sony, TCL, Philips and others) or a vendor service. Vendor apps can also hold the
+microphone and the camera.
+
+That is why TVs keep getting cheaper: the money is in the viewing data. Vizio reports more profit from ads and
+viewer data than from the TVs themselves, and paid the FTC $2.2M in 2017 for tracking 11 million sets without
+consent. In December 2025 Texas sued Samsung, Sony, LG, Hisense and TCL over ACR.
+
+The switch is buried in the menus, and a switch is only a promise. CleanTV turns it off with you, then checks for
+itself: it disables the ACR and ad packages and blocks the microphone and the camera for every app you don't use
+them with.
 
 ## What it does
 
 - **Debloat.** Disables telemetry, ads and vendor junk. Asks what you use first. Removes nothing: one command brings everything back.
+- **Privacy, on every TV.** Finds ACR, viewing-data and ad services and disables them. Walks you through the
+  "viewing information", diagnostics and ad ID switches and checks each one on a screenshot. Takes the microphone and
+  the camera away from vendor apps; your voice assistant keeps the mic if you use it.
 - **Speed.** Measures memory before and after. Speeds up animations, limits background work of rarely used apps.
 - **Apple TV style launcher.** Pitch black background, a dock with your apps, a glass highlight, a clock, an HDMI inputs menu. On power-on it shows placeholder tiles at once instead of a black screen.
 - **Calibrated picture.** Mode, colour temperature, gamma and backlight for your room's light. Switches off motion smoothing, noise reduction and the other "enhancers".
@@ -70,6 +90,7 @@ Measured on two TVs:
 | | Apps-only mode | Launcher app | Ad-blocking DNS | **CleanTV** |
 |---|:-:|:-:|:-:|:-:|
 | No ads on the home screen | ➖ fewer | ✅ | ➖ some | ✅ |
+| Screen recognition (ACR) off, mic and camera locked | ❌ | ❌ | ➖ some hosts | ✅ |
 | Vendor services off, memory freed | ❌ | ❌ | ❌ | ✅ |
 | Picture and sound calibrated | ❌ | ❌ | ❌ | ✅ |
 | No YouTube ads | ❌ | ❌ | ❌ | ❌ |
@@ -139,6 +160,16 @@ python ../../skills/android-tv-setup/scripts/restore.py
 
 **Can I remove ads from Google TV without root?**
 Yes. CleanTV works over ADB debugging, which you turn on in Developer options. No root, no unlocked bootloader.
+
+**Does the TV really watch what I watch?**
+If ACR is on, yes: it recognises the picture, also from HDMI, and reports it. CleanTV disables those services,
+has you switch off the menu toggles, and blocks the microphone and the camera for apps that don't need them.
+
+**I have a Samsung or LG. Can I at least turn the tracking off?**
+CleanTV does not work on Tizen or webOS, but the switches are in the menu. Samsung: Settings → Support → Terms &
+Privacy → Viewing Information Services off, and Interest-Based Advertisement off. LG: Settings → General → System →
+Additional Settings → Live Plus off, and in User Agreements untick Viewing Information and Interest-Based
+Recommendation. Paths change by model year.
 
 **Will it break my TV?**
 Packages are disabled, not uninstalled. The skill refuses Android core, factory and Wi-Fi owner packages, backs up

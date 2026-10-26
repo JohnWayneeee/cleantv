@@ -52,8 +52,8 @@ python <skill>/scripts/tv.py 'ping -c1 -W2 8.8.8.8 | tail -1'
 Look at the screenshot before the next batch. A batch can take something load-bearing with it, and you can only
 tell which batch if they are small.
 
-Typical batches: (1) vendor telemetry/content/ads, (2) the owner's "don't use" choices, (3) launcher takeover
-(launcher.md), (4) speed (performance.md).
+Typical batches: (1) vendor telemetry/content/ads, (2) the owner's "don't use" choices, (3) ACR and viewing data
+(privacy.md, mandatory), (4) launcher takeover (launcher.md), (5) speed (performance.md).
 
 ## 4. Reboot check
 
