@@ -63,22 +63,27 @@ python <skill>/scripts/privacy.py scan     # proves RECORD_AUDIO=ignore / CAMERA
   them to push it down or cover it. Software cannot prove a camera is off; the shutter can.
 - App ops survive reboots; `restore.py` puts the original modes back.
 
-## 5. Network
+## 5. Network: blocking DNS (default on)
 
-Recommend the ad-blocking Private DNS (Q-L5, debloat.md "Optional: ad-blocking DNS") here: it also blocks
-many ACR and tracking hosts the packages above did not cover. Same warnings: check playback, VPN/DPI-bypass apps.
+Ask Q-R4 and turn it on unless the owner says no. It catches the tracking hosts that no package list covers,
+and the owner does nothing but answer yes:
 
-A block list ages: firmware updates add hosts. A reader running AdGuard Home saw an LG webOS TV with every
-telemetry toggle off still call `eic-connect-client.lgthinq.com`, `eic.tv.wiselg.com`, `fr.nextlgsdp.com` and
-`lgtvonline.lge.com` at startup. After two webOS updates it also called `prov-lg.alphonso.tv` (Alphonso, LG's
-ACR company), which his 18-month-old list did not have. His list blocks `*.lgsmartplatform.com`, `*.lgeapi.com`,
-`*.lgsmartad.com`, `*.lgtviot.com`, `*.lgthinq.com`, `*.lge.com`, `*.lgtvcommon.com`, `*.lgtvsdp.com` and
-allows only the firmware hosts `snu.lge.com` and `su-ssl.lge.com`.
+```sh
+python <skill>/scripts/privacy.py dns on      # AdGuard DNS as Private DNS, logged for restore.py
+python <skill>/scripts/privacy.py dns check   # proves an ad host is sunk and normal sites still resolve
+```
 
-When the owner runs their own DNS filter (AdGuard Home, Pi-hole), suggest the same shape for the TV: deny
-everything from the TV's IP except firmware updates and the streaming apps they use, redirect port 53 on the
-router so hardcoded DNS cannot bypass it, and block outbound DoT/DoH from the TV. Check playback in every app
-after; a too-tight list breaks apps, not the TV.
+`OK` is the proof. After it, open every streaming app the owner uses and start a video. If one fails, or
+`check` prints `FAIL`, run `privacy.py dns off` and tell the owner. `NOT BLOCKING` usually means a VPN app (ByeByeDPI
+in always-on mode) answers DNS itself: say so and leave it. Android 8 and older have no Private DNS: skip and
+say so. It does not block YouTube ads.
+
+Why a ready-made filter and not a hand-made list: a block list ages. A reader's LG TV started calling a new ACR
+host after two firmware updates that his 18-month-old list did not have. A maintained filter picks up new hosts.
+
+Only when the owner says they run their own DNS filter (AdGuard Home, Pi-hole): skip Private DNS, and suggest a
+default-deny for the TV's IP (firmware hosts and the apps they use),
+a port 53 redirect on the router, and no outbound DoT/DoH from the TV. Do not bring this up with anyone else.
 
 ## 6. Report
 

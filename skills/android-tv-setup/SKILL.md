@@ -30,7 +30,7 @@ Run scripts as `python <skill>/scripts/<name>.py` with the work directory as the
 | `setting.py` | change settings, records original values for restore |
 | `snapshot.py` | find which settings key a TV menu item writes (save, change one item, diff) |
 | `appops.py` | restrict background running for apps, logs for restore |
-| `privacy.py` | list ACR/ad packages and apps holding the mic or camera; block mic and camera, logs for restore |
+| `privacy.py` | list ACR/ad packages and apps holding the mic or camera; block mic and camera; blocking DNS with a proof check; logs for restore |
 | `restore.py` | undo everything: packages, settings, app ops, Home |
 | `build-install.sh` | build the launcher, install, set as Home, print who really holds Home |
 | `adb-closed.py` | prove network ADB is closed at the end |
@@ -45,7 +45,7 @@ Run scripts as `python <skill>/scripts/<name>.py` with the work directory as the
    screenshot after each batch.
 4. **Privacy** - `references/privacy.md`. Mandatory on every TV, never skipped. Scan with `scripts/privacy.py`,
    have the owner switch off ACR / viewing information / ad ID in the menu (screenshots), disable proven ACR
-   packages, block the mic and camera for vendor apps. Ask Q-R*.
+   packages, block the mic and camera for vendor apps, turn on blocking DNS (`privacy.py dns on`). Ask Q-R*.
 5. **Performance** - `references/performance.md`. Measure memory first, ask Q-P*, apply, measure again.
 6. **Launcher** - `references/launcher.md`. Ask Q-L*, build, install, take over Home. On Google TV this
    involves the setup wizard and the Wi-Fi owner: follow the file exactly. Verify the cold-start skeletons per
