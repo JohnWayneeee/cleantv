@@ -68,6 +68,18 @@ python <skill>/scripts/privacy.py scan     # proves RECORD_AUDIO=ignore / CAMERA
 Recommend the ad-blocking Private DNS (Q-L5, debloat.md "Optional: ad-blocking DNS") here: it also blocks
 many ACR and tracking hosts the packages above did not cover. Same warnings: check playback, VPN/DPI-bypass apps.
 
+A block list ages: firmware updates add hosts. A reader running AdGuard Home saw an LG webOS TV with every
+telemetry toggle off still call `eic-connect-client.lgthinq.com`, `eic.tv.wiselg.com`, `fr.nextlgsdp.com` and
+`lgtvonline.lge.com` at startup. After two webOS updates it also called `prov-lg.alphonso.tv` (Alphonso, LG's
+ACR company), which his 18-month-old list did not have. His list blocks `*.lgsmartplatform.com`, `*.lgeapi.com`,
+`*.lgsmartad.com`, `*.lgtviot.com`, `*.lgthinq.com`, `*.lge.com`, `*.lgtvcommon.com`, `*.lgtvsdp.com` and
+allows only the firmware hosts `snu.lge.com` and `su-ssl.lge.com`.
+
+When the owner runs their own DNS filter (AdGuard Home, Pi-hole), suggest the same shape for the TV: deny
+everything from the TV's IP except firmware updates and the streaming apps they use, redirect port 53 on the
+router so hardcoded DNS cannot bypass it, and block outbound DoT/DoH from the TV. Check playback in every app
+after; a too-tight list breaks apps, not the TV.
+
 ## 6. Report
 
 Tell the owner: which ACR/ad packages were disabled, which toggles they switched off (with the screenshots),
