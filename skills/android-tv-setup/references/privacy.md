@@ -78,13 +78,11 @@ python <skill>/scripts/privacy.py dns check   # proves an ad host is sunk and no
 in always-on mode) answers DNS itself: say so and leave it. Android 8 and older have no Private DNS: skip and
 say so. It does not block YouTube ads.
 
-Why a ready-made filter and not a hand-made list: a block list ages. A reader with AdGuard Home saw an LG webOS
-TV with every telemetry toggle off still call `eic-connect-client.lgthinq.com`, `eic.tv.wiselg.com`,
-`fr.nextlgsdp.com` and `lgtvonline.lge.com`, and after two webOS updates `prov-lg.alphonso.tv` (Alphonso, LG's
-ACR company), which his 18-month-old list did not have. A maintained filter picks up new hosts without us.
+Why a ready-made filter and not a hand-made list: a block list ages. A reader's LG TV started calling a new ACR
+host after two firmware updates that his 18-month-old list did not have. A maintained filter picks up new hosts.
 
 Only when the owner says they run their own DNS filter (AdGuard Home, Pi-hole): skip Private DNS, and suggest a
-default-deny for the TV's IP (firmware hosts and the apps they use, e.g. `snu.lge.com`, `su-ssl.lge.com` for LG),
+default-deny for the TV's IP (firmware hosts and the apps they use),
 a port 53 redirect on the router, and no outbound DoT/DoH from the TV. Do not bring this up with anyone else.
 
 ## 6. Report
