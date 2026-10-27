@@ -74,8 +74,6 @@ Fire OS 5 and some others refuse `pm disable-user` with `SecurityException`, `pm
 `DELETE_FAILED_INTERNAL_ERROR`, and `pm hide` reports success but changes nothing. Trust `pm list packages -d`,
 not the exit code. If every package is refused, stop: offer the TV's own privacy toggles and DNS blocking.
 
-## Optional: ad-blocking DNS (Q-L5)
+## Ad-blocking DNS
 
-Android 9+: `setting.py put global private_dns_specifier dns.adguard-dns.com` then
-`setting.py put global private_dns_mode hostname`. Check that an app still plays. It does not block YouTube ads.
-Undo: `restore.py` or `private_dns_mode opportunistic`.
+Part of the privacy phase now: `privacy.md` section 5, `privacy.py dns on`.

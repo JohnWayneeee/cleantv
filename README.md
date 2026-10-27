@@ -71,7 +71,8 @@ them with.
 - **Debloat.** Disables telemetry, ads and vendor junk. Asks what you use first. Removes nothing: one command brings everything back.
 - **Privacy, on every TV.** Finds ACR, viewing-data and ad services and disables them. Walks you through the
   "viewing information", diagnostics and ad ID switches and checks each one on a screenshot. Takes the microphone and
-  the camera away from vendor apps; your voice assistant keeps the mic if you use it.
+  the camera away from vendor apps; your voice assistant keeps the mic if you use it. Turns on a DNS filter that
+  blocks the tracking hosts the TV calls even with the switches off, and proves it works.
 - **Speed.** Measures memory before and after. Speeds up animations, limits background work of rarely used apps.
 - **Apple TV style launcher.** Pitch black background, a dock with your apps, a glass highlight, a clock, an HDMI inputs menu. On power-on it shows placeholder tiles at once instead of a black screen.
 - **Calibrated picture.** Mode, colour temperature, gamma and backlight for your room's light. Switches off motion smoothing, noise reduction and the other "enhancers".

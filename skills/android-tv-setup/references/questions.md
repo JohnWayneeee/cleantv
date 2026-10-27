@@ -51,6 +51,9 @@ Mandatory phase (`privacy.md`). Show the `privacy.py scan` output in plain words
 **Q-R3. Camera** (only when the TV has one or an app holds the permission): block for all (recommended) / keep for a call app.
 - RU: У ТВ есть камера или доступ к ней. Запретить всем (рекомендую) или оставить для видеозвонков? Шторку камеры лучше закрыть.
 
+**Q-R4. Blocking DNS** (Android 9+): turn on (recommended: blocks ad and tracking hosts the TV calls even with the toggles off, every app keeps working, undo is one command) / no / I run my own DNS filter.
+- RU: Включить DNS, который блокирует рекламу и слежку? Телевизор обращается к таким адресам даже с выключенными настройками. Приложения работают как раньше, отключается одной командой.
+
 ## Performance (Q-P)
 
 Ask after measuring (`backup/meminfo.txt`, `top`). Show the numbers.
@@ -89,8 +92,7 @@ Ask after measuring (`backup/meminfo.txt`, `top`). Show the numbers.
 **Q-L6. Apps to hide from the grid** (checklist of the grid apps, split into several questions of 4). Hiding uses `hidden_apps`: the app stays installed and keeps serving remote keys and background work. Ask who uses the TV: for a child, an elderly person or a user with limited capacity, offer a short grid (or only the dock).
 - RU: Какие приложения оставить на главном экране? Остальные скрою, работать они продолжат.
 
-**Q-L5. Ad-blocking Private DNS** (Android 9+): `dns.adguard-dns.com`. Does not block YouTube ads. Warn when a VPN/DPI-bypass app is installed.
-- RU: Включить блокировку рекламы через частный DNS? Рекламу YouTube он не блокирует.
+**Q-L5.** Moved to the privacy phase (Q-R4); do not ask twice.
 
 ## YouTube DPI bypass (Q-B)
 
