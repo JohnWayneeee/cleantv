@@ -4,7 +4,7 @@
 
 <h1 align="center">CleanTV</h1>
 
-<p align="center"><b>English</b> · <a href="README.ru.md">Русский</a></p>
+<p align="center"><b>English</b> · <a href="README.uk.md">Українська</a> · <a href="README.ru.md">Русский</a></p>
 
 <p align="center">
   <b>Remove ads from your Google TV home screen and make the TV fast again with one sentence in Claude Code.</b><br>
